@@ -1,14 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import MainAppLayout from '../components/layout/MainAppLayout';
+import PostFeed from '../components/UserFeed/PostFeed';
 
-const Index = () => {
+/**
+ * FeedPage renders the main user feed overview, corresponding to the "User Feed Overview" target page.
+ * It utilizes MainAppLayout for the overall page structure, which includes
+ * the LeftSidebarNav, TopHeader, and RightSidebar (with StoryPanel and potentially GroupSuggestions).
+ * The primary content displayed in the MainContentArea of this page is the PostFeed.
+ *
+ * Note: The rendering of StoryPanel and GroupSuggestions within the RightSidebar
+ * is handled by MainAppLayout itself, as per the component hierarchy and layout definitions.
+ */
+const FeedPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <MainAppLayout>
+      <PostFeed />
+    </MainAppLayout>
   );
 };
 
-export default Index;
+export default FeedPage;
